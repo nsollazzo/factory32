@@ -50,7 +50,9 @@
         <script type="text/javascript">
             function continueRegistration() {
                 const queryString = window.location.search;
-                location.href = "https://factory32-1.eu.auth0.com/continue"+queryString;
+                const urlParams = new URLSearchParams(queryString);
+                const state = urlParams.get('state');
+                location.href = "https://factory32-1.eu.auth0.com/continue?"+state;
             }
         </script>
 
